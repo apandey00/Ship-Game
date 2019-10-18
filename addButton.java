@@ -10,9 +10,12 @@ public class addButton extends JButton implements ActionListener{
     private ComboBox combo;
     private TextField tfCol;
     private TextField tfRow;
+    private ToggleButton sail;
+    private ToggleButton speed;
 
     public addButton (String label, String msg, Model m, ComboBox Combo,
-                      TextField tf1, TextField tf2){
+                      TextField tf1, TextField tf2, ToggleButton sail,
+                      ToggleButton speed){
         
         setText(label);
         addActionListener(this);
@@ -22,6 +25,8 @@ public class addButton extends JButton implements ActionListener{
         combo = Combo;
         tfCol = tf1;
         tfRow = tf2;
+        this.sail = sail;
+        this.speed = speed;
     }
 
     public void actionPerformed(ActionEvent e){
@@ -35,8 +40,14 @@ public class addButton extends JButton implements ActionListener{
         int col = Integer.parseInt(colS);
         
         int row = Integer. parseInt(rowS);
-
-        SailBoat v = new SailBoat(col, row);
+        
+        Vehicle v;
+        if (sail.isSelected()) {
+            v = new SailBoat(col, row);
+        }
+        else {
+            v = new SpeedBoat(col, row);
+        }
         model.addVehicle(v);
         combo.addShip();
         model.redraw();

@@ -93,7 +93,7 @@ public class Main extends JFrame {
 
         
         addButton addB = new addButton ("Add Ship", "New Ship Added", dataModel, 
-                                        combo, tfCol, tfRow);
+                                        combo, tfCol, tfRow, tb1, tb2);
         controls.add (addB);
 
         // Speed control
