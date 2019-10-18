@@ -29,6 +29,7 @@ public class SpeedBoat extends Vehicle {
         c = Color.BLACK;
         orientation = RIGHT;
         inMotion = true;
+        speed = 30;
     }
 
 
