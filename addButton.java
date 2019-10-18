@@ -34,12 +34,18 @@ public class addButton extends JButton implements ActionListener{
         String colS = tfCol.getText();
         String rowS = tfRow.getText();
         
+        /* default values */
+        int col = 100;
+        int row = 100;
+
+        /* validate input */
+        if (isNumeric(colS) && isNumeric(rowS)) {
+            col = Integer.parseInt(colS);
+            row = Integer. parseInt(rowS);
+        }
+
         tfCol.setText("");
         tfRow.setText("");
-        
-        int col = Integer.parseInt(colS);
-        
-        int row = Integer. parseInt(rowS);
         
         Vehicle v;
         if (sail.isSelected()) {
@@ -52,5 +58,14 @@ public class addButton extends JButton implements ActionListener{
         combo.addShip();
         model.redraw();
     }
+
+    public static boolean isNumeric(String strNum) {
+    try {
+        double d = Double.parseDouble(strNum);
+    } catch (NumberFormatException | NullPointerException nfe) {
+        return false;
+    }
+    return true;
+}
 }
 
