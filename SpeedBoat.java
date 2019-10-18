@@ -1,4 +1,4 @@
-/* SailBoat.java
+/* SpeedBoat.java
  * Subclass of Vehicle
  */
 
@@ -7,9 +7,9 @@ import javax.swing.*;
 import java.awt.geom.*;
 import java.util.Vector;
 
-public class SailBoat extends Vehicle {
+public class SpeedBoat extends Vehicle {
 
-    SailBoat (int x, int y) {
+    SpeedBoat (int x, int y) {
         components = new Vector<>();
 
         initialX = x;
@@ -22,15 +22,9 @@ public class SailBoat extends Vehicle {
 
         Polygon base = new Polygon(xBase, yBase, 4);
         components.add(base);
-        
-        int xSail[] = {x + 50, x + 50, x + 70};
-        int ySail[] = {y - 40, y - 10, y - 10,}; 
 
-        Polygon sail = new Polygon(xSail, ySail, 3);
-        components.add(sail);
-
-        Rect mast = new Rect(x + 45, y - 40, 5, 40);
-        components.add(mast);
+        Rect engine = new Rect(x + 10, y - 10, 10, 10);
+        components.add(engine);
 
         c = Color.BLACK;
         orientation = RIGHT;
@@ -117,15 +111,9 @@ public class SailBoat extends Vehicle {
 
         Polygon baseLeft = new Polygon(xLeft, yLeft, 4);
         components.add(baseLeft);
-        
-        int xsailLeft[] = {currX + 45, currX + 45, currX + 25};
-        int ysailLeft[] = {currY - 40, currY - 10, currY - 10,}; 
 
-        Polygon sailLeft = new Polygon(xsailLeft, ysailLeft, 3);
-        components.add(sailLeft);
-
-        Rect mastLeft = new Rect(currX + 45, currY - 40, 5, 40);
-        components.add(mastLeft);
+        Rect engineLeft = new Rect(currX + 80, currY - 10, 10, 10);
+        components.add(engineLeft);
         break;
 
         case RIGHT:
@@ -134,15 +122,9 @@ public class SailBoat extends Vehicle {
 
         Polygon base = new Polygon(xBase, yBase, 4);
         components.add(base);
-        
-        int xSail[] = {currX + 50, currX + 50, currX + 70};
-        int ySail[] = {currY - 40, currY - 10, currY - 10,}; 
 
-        Polygon sail = new Polygon(xSail, ySail, 3);
-        components.add(sail);
-
-        Rect mast = new Rect(currX + 45, currY - 40, 5, 40);
-        components.add(mast);
+        Rect engine = new Rect(currX + 10, currY - 10, 10, 10);
+        components.add(engine);
         break;
         }
     }

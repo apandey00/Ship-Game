@@ -17,7 +17,7 @@ public class Main extends JFrame {
          setTitle("Ship Traffic Simulator");
          
         
-        SailBoat boat = new SailBoat(200,200);
+        SpeedBoat boat = new SpeedBoat(200,200);
 
         /* Holds data for simulation */
         Model dataModel = new Model(boat);
@@ -75,11 +75,23 @@ public class Main extends JFrame {
         mcButton stopButton = new mcButton ("Stop", "Stop was pressed", "stop", dataModel, sBar);
         controls.add (stopButton);
 
+
+        // radiobuttons
+        ToggleButton tb1 = new ToggleButton("Sailboat", true);
+        ToggleButton tb2 = new ToggleButton("Speedboat", false);
+        tb1.addButton(tb2);
+        tb2.addButton(tb1);
+
+        controls.add(tb1);
+        controls.add(tb2);
+
         // Add Ship Button
         TextField tfCol = new TextField();
         TextField tfRow = new TextField();
         controls.add(tfCol);
         controls.add(tfRow);
+
+        
         addButton addB = new addButton ("Add Ship", "New Ship Added", dataModel, 
                                         combo, tfCol, tfRow);
         controls.add (addB);
