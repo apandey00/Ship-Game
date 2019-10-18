@@ -1,7 +1,10 @@
 README
 Aryan Pandey
-Assignment 4
-Date: 10/12/2019
+Assignment 5
+Date: 10/18/2019
+
+Main Changes from Assignment 4:
+- Implemented a Speedboat subclass of Vehicle
 
 Main Changes from Assignment 3:
 - Implemented drawing ships with Java draw methods instead of ImageIcons
