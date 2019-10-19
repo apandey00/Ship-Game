@@ -29,9 +29,7 @@ public class Canvas extends JPanel {
 
         setBackground(color);
         
-        for (int i = 0; i < model.numVehicles(); i++) {
-            (model.getVehicles(i)).draw(g);
-        }
+        model.drawAll(g);
         //TODO: Add background objects later 
 
     }

@@ -14,18 +14,13 @@ Main Changes from Assignment 4:
 - Implemented a Speedboat subclass of Vehicle
 - Disabled UP and DOWN states for vehicles: looked clunky 
         - rethink design and reuse state when adding vertical motion
-
-
-Main Changes from Assignment 3:
-- Implemented drawing ships with Java draw methods instead of ImageIcons
-- Added Shape superclass with Rect and Polygon subclasses
-- Ships are essentially rendered out as a combination of shapes
-- Ships that are drawn can still be rotated with the rotate buttons
-- Add ship functionality now works
-- Color Change Button implemented - Changes BG color to a random color
-- ComboBox is properly implemented: now switches program control to appropriate ships accordingly
-- Added Sailboat class that inherits from the Vehicle superclass
-- Added Model class that keeps track of simulation data and stores all vehicles
+- Added a Speedboat subclass for Vehicle
+- Added toggle buttons to switch between subclasses
+- Added Text fields for value input during manual ship addition
+- Add ship button now can post ships of specified types at specified location
+- Added a Start all and Stop all button that starts and halts animation
+  of the entire simulation at once 
+- Added speed control through Scrollbar
 
 
 Application design description:
@@ -35,25 +30,25 @@ Application design description:
     orientation of the boat and buttons that dictate start and stop. 
 
     Start and Stop will control the movement of the ship objects, causing them to either start moving forward or stop:
-    Yet to be implemented.
 
     Left and Right will rotate the ship accordingly and have already been implemented.
     
 -   addShip button that adds another ship to the canvas that is controllable
-    has now been implemented
      
 -   To control the multiple ships on the Canvas, there is currently a ComboBox on the Right panel that toggles 
     between the ships being controlled. I might possibly change the ComboBox into multiple Radio Buttons in the
     future.
 
 An outline showing the inheritance hierarchy:
--   Button.java, addButton.java, ColorButton.java and rotateButton.java all 
-    have a button class that inherits from JButton
+-   ToggleButton.java mcButton.java, addButton.java, ColorButton.java 
+    and rotateButton.java all have a button class that inherits from JButton
+-   ScrollBar inherits from JScrollBar
+-   ToggleButton inherits from JToggleButton
 -   Canvas.java currently inherits from JPanel
 -   Main.java inherits from JFrame
 -   ComboBox.java inherits from JComboBox
 -   Rect.java and Polygon.java both inherit from Shape.java
--   Sailboat.java inherits from Vehicle.java
+-   Sailboat.java and SpeedBoat.java both inherit from Vehicle.java
 
 An outline showing the aggregation hierarchy:
 -   The Main window in Main.java starts off with a Panel in BorderLayout format
@@ -94,3 +89,7 @@ Compile with: javac Main.java
 Run with: java Main
 
 
+An outline showing the inheritance hierarchy
+An outline showing the aggregation hierarchy (which objects contain or own which other objects)
+New: A list showing uses or collaboration relationships (which objects use which other objects to perform functions)
+New: The information hiding secrets of each of your classes (i.e., what design decisions are entirely encapsulated within that class).

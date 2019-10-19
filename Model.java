@@ -86,6 +86,12 @@ public class Model implements ActionListener {
     public void setCanvas(Canvas c) {
         canvas = c;
     }
+
+    public void drawAll(Graphics g) {
+        for (int i = 0; i < numVehicles(); i++) {
+            getVehicles(i).draw(g);
+        }
+    }
     public void redraw() {
         canvas.repaintCall();
     }

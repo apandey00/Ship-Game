@@ -1,5 +1,5 @@
 /* mcButton.java
- */ Button for Motion Control
+ * Button for Motion Control
  */
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
