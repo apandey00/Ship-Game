@@ -3,8 +3,18 @@ Aryan Pandey
 Assignment 5
 Date: 10/18/2019
 
+Notes:
+- addButton currently takes too many parameters: rethink design\
+- Rethink better way to handle speed functionality 
+- Change start and stop buttons to toggle buttons as well
+
+
+
 Main Changes from Assignment 4:
 - Implemented a Speedboat subclass of Vehicle
+- Disabled UP and DOWN states for vehicles: looked clunky 
+        - rethink design and reuse state when adding vertical motion
+
 
 Main Changes from Assignment 3:
 - Implemented drawing ships with Java draw methods instead of ImageIcons

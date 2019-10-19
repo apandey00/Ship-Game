@@ -1,4 +1,7 @@
-/* ColorButton.java */
+/* ColorButton.java 
+ * Changes BG color
+ */
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

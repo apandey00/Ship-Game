@@ -1,6 +1,6 @@
-// mcButton.java
-// Button for Motion Control
-
+/* mcButton.java
+ */ Button for Motion Control
+ */
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -41,7 +41,6 @@ public class mcButton extends JButton implements ActionListener{
             model.stopAll();
             scBar.setEnabled(false);
         }
-
         model.redraw();
     }
 }

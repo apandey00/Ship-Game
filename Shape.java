@@ -13,7 +13,6 @@ abstract public class Shape {
         x = xin; y = yin;
     }
 
-    protected void draw(Graphics g) {
-
-    }
+    /* abstract function */
+    protected void draw(Graphics g) {}
  }

@@ -1,5 +1,8 @@
 /* SpeedBoat.java
  * Subclass of Vehicle
+ * 
+ * TODO: Re-implement UP and down states to handle 
+ *       vertical motion instead 
  */
 
 import java.awt.*;
@@ -32,37 +35,23 @@ public class SpeedBoat extends Vehicle {
         speed = 30;
     }
 
-
-    protected void rotateLeft(){
-        if (orientation != 3){
-            orientation++;
-        }
-        else {
-            orientation = 0;
-        }
-        changeDisplay();
-    }
-
-    protected void rotateRight(){
-        if (orientation != 0){
-            orientation--;
-        }
-        else {
-            orientation = 3;
-        }
-        changeDisplay();
-    }
-
+    @Override
     protected void changeDisplay(){
         components.clear();
         switch(orientation){
 
+        /* Up and Down states currently disabled because it looks clunky
+         * Code will be refactored to react to vertical motion instead when 
+         * implemented 
+         */
+
+        /*    
         case UP:
         
         // TODO: Change hardcoded data to ratios 
         // Find better way to change state when rotating 
 
-        /* shift by 12 to center image */
+        // shift by 12 to center image 
         currX = currX + 12;
         int xUp[] = {currX + 25, currX + 25, currX + 50 , currX + 50};
         int yUp[] = {currY + 50, currY - 50, currY - 25, currY + 25};
@@ -79,12 +68,12 @@ public class SpeedBoat extends Vehicle {
         Rect mastUp = new Rect(currX - 18, currY , 45, 5);
         components.add(mastUp);
 
-        /* Undo shift */
+        
         currX = currX - 12;
         break;
 
         case DOWN:
-        /* shift by 12 to center image */
+        
         currX = currX + 12;
         int xDown[] = {currX + 25, currX + 25, currX , currX };
         int yDown[] = {currY + 50, currY - 50, currY - 25, currY + 25};
@@ -101,10 +90,9 @@ public class SpeedBoat extends Vehicle {
         Rect mastDown = new Rect(currX + 24, currY , 40, 5);
         components.add(mastDown);
 
-        /* Undo shift */
         currX = currX - 12;
         
-        break;
+        break; */
 
         case LEFT: 
         int xLeft[] = {currX, currX + 25, currX + 75, currX + 100};
@@ -127,6 +115,31 @@ public class SpeedBoat extends Vehicle {
         Rect engine = new Rect(currX + 10, currY - 10, 10, 10);
         components.add(engine);
         break;
+
         }
     }
+
+    /* No need to override since we are only using two states for now */
+
+    /*
+    protected void rotateLeft(){
+        if (orientation != 3){
+            orientation++;
+        }
+        else {
+            orientation = 0;
+        }
+        changeDisplay();
+    }
+
+    protected void rotateRight(){
+        if (orientation != 0){
+            orientation--;
+        }
+        else {
+            orientation = 3;
+        }
+        changeDisplay();
+    }
+    */
 }

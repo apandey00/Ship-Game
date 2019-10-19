@@ -1,4 +1,6 @@
-/* addButton.java */
+/* addButton.java 
+ * Handles adding new instances of vehicles to the simulation
+ */
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -13,6 +15,7 @@ public class addButton extends JButton implements ActionListener{
     private ToggleButton sail;
     private ToggleButton speed;
 
+    // Need to restructure
     public addButton (String label, String msg, Model m, ComboBox Combo,
                       TextField tf1, TextField tf2, ToggleButton sail,
                       ToggleButton speed){
@@ -44,9 +47,10 @@ public class addButton extends JButton implements ActionListener{
             row = Integer. parseInt(rowS);
         }
 
+        /* reset textfields */
         tfCol.setText("");
         tfRow.setText("");
-        
+
         Vehicle v;
         if (sail.isSelected()) {
             v = new SailBoat(col, row);
@@ -59,10 +63,11 @@ public class addButton extends JButton implements ActionListener{
         model.redraw();
     }
 
-    public static boolean isNumeric(String strNum) {
+    /* function to validate input */
+    private boolean isNumeric(String strNum) {
     try {
         double d = Double.parseDouble(strNum);
-    } catch (NumberFormatException | NullPointerException nfe) {
+    } catch (NumberFormatException | NullPointerException id) {
         return false;
     }
     return true;

@@ -19,6 +19,7 @@ public class Model implements ActionListener {
         boats.add(v);
         currVehicle = 0;
 
+        /* Start timer for animation */
         Timer timer = new Timer(10, this);
         timer.start();
     }
