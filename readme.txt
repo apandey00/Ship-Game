@@ -66,6 +66,8 @@ An outline showing the aggregation hierarchy:
         An Addship button that adds another controllable object to the
         simulation. It contains a pointer to the model to update ship
         information and redraw.
+        Two togglebuttons to change betwene ship types
+        Two text fields for location input
 
     The EAST space is occupied by a JPanel currently called ships
         It contains a ComboBox that will toggle control of ships in
@@ -73,6 +75,8 @@ An outline showing the aggregation hierarchy:
         to update data.
         It also contains a ColorButton that changes BG color when clicked.
         ColorButton contains a pointer to the Canvas for redraw calls
+        It also contains two start buttons that start and halt whole
+        simulation
 
 
     The Model class has a vector of Vehicles and a pointer to the canvas
@@ -84,12 +88,43 @@ An outline showing the aggregation hierarchy:
     The SailBoat subclass has two instances of Polygon objects as well
     as a Rect object to represent itself.
 
+    The SpeedBoat subclass thas a Polygon object and a Rect object to
+    represent itelf.
+
+
+Collaboration relationships:
+
+-   addButton.java has access to the Model, the ComboBox,
+    the two textfields and the two togglebuttons.
+-   Canvas has a pointer to the Model
+-   ColorButton has a pointer to the Canvas
+-   ComboBox has a pointer to the Model and the ScrollBar
+-   mcButton has a pointer to the Scrollbar
+-   rotateButton has a pointer to the Model
+-   ScrollBar has a pointer to the Model
+-   ToggleButton has a pointer to the other ToggleButton
+
+Secrets: 
+-   addButton defaults to adding ships at default location
+    if input is invalid 
+-   ComboBox sets the program control to the ship currently
+    being selected
+-   mcButton sets the isInMotion value of the Vehicles to either
+    be true or false so the simulation animation starts and stops
+    accordingly 
+-   Model holds the vector of vehicles and has the public 
+    functions to interact with them. It also has the timer
+    to start the animation.
+-   rotateButton set the orientation of the selected ship upon
+    button press
+-   Sailboat holds information about the shapes being used
+    to draw it.
+-   SpeedBoat holds information about the shapes being used
+    to draw it.
+-   ToggleButton holds information about the other togglebuttons
+    to disable the other if one is in use.
 
 Compile with: javac Main.java
 Run with: java Main
 
 
-An outline showing the inheritance hierarchy
-An outline showing the aggregation hierarchy (which objects contain or own which other objects)
-New: A list showing uses or collaboration relationships (which objects use which other objects to perform functions)
-New: The information hiding secrets of each of your classes (i.e., what design decisions are entirely encapsulated within that class).
