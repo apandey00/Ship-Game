@@ -59,6 +59,9 @@ abstract public class Vehicle {
             currX = currX - speed / 10;
         }
     }
+    protected void setColor(Color c) {
+        this.c = c;
+    }
     protected void stopMotion() {
         inMotion = false;
     }

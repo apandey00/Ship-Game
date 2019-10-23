@@ -98,7 +98,11 @@ public class Model implements ActionListener {
 
     public void drawAll(Graphics g) {
         for (int i = 0; i < numVehicles(); i++) {
+            if (currVehicle == i) {
+                boats.get(i).setColor(Color.RED);
+            }
             getVehicles(i).draw(g);
+            boats.get(i).setColor(Color.BLACK);
         }
     }
     public void redraw() {
