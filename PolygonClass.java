@@ -5,16 +5,22 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
-class Polygon extends Shape {
+class PolygonClass extends ShapeClass {
 
     private int[] xArray;
     private int[] yArray; 
     int num;
 
-    public Polygon (int[] xin, int[] yin, int n) {
+    public PolygonClass (int[] xin, int[] yin, int n) {
         xArray = xin.clone();
         yArray = yin.clone();
         num = n;
+        setPos(xin[0], yin[0]);
+    }
+
+    public boolean checks(Point p) {
+        Polygon pol = new Polygon(xArray, yArray, num);
+        return pol.contains(p);
     }
 
     public void draw(Graphics g) {

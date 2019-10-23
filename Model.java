@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
+import java.awt.event.*;
 
 public class Model implements ActionListener {
     private Vector<Vehicle> boats;
@@ -33,6 +34,14 @@ public class Model implements ActionListener {
         tick();
         canvas.repaint();
 
+    }
+    public void doMouse(Point p) {
+        for (int i = 0; i < boats.size(); i++) {
+            if (boats.get(i).isInside(p)) {
+                currVehicle = i;
+                break;
+            }
+        }
     }
 
     protected void tick() {

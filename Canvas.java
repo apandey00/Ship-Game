@@ -7,8 +7,9 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
+import java.awt.event.*;
 
-public class Canvas extends JPanel {
+public class Canvas extends JPanel implements MouseListener {
 
     /* Contains a Model object that stores 
      * data relating to all the vehicles
@@ -20,6 +21,7 @@ public class Canvas extends JPanel {
         model = m;
         Color lightBlue = new Color(82, 219, 255);
         color = lightBlue;
+        addMouseListener(this);
     }
 
     /* draw Callback */ 
@@ -33,6 +35,9 @@ public class Canvas extends JPanel {
         //TODO: Add background objects later 
 
     }
+    public void mouseClicked (MouseEvent event) {
+        model.doMouse(event.getPoint());
+    }
     public void repaintCall(){
         repaint();
     }
@@ -40,4 +45,8 @@ public class Canvas extends JPanel {
     public void setBG(Color c) {
         color = c;
     }
+     public void mousePressed (MouseEvent event) {}
+    public void mouseReleased (MouseEvent event) {}
+    public void mouseEntered (MouseEvent event) {}
+    public void mouseExited (MouseEvent event) {}
 }

@@ -23,7 +23,7 @@ public class SpeedBoat extends Vehicle {
         int xBase[] = {x, x + 25, x + 75, x + 100};
         int yBase[] = {y, y + 25, y + 25, y};
 
-        Polygon base = new Polygon(xBase, yBase, 4);
+        PolygonClass base = new PolygonClass(xBase, yBase, 4);
         components.add(base);
 
         Rect engine = new Rect(x + 10, y - 10, 10, 10);
@@ -56,13 +56,13 @@ public class SpeedBoat extends Vehicle {
         int xUp[] = {currX + 25, currX + 25, currX + 50 , currX + 50};
         int yUp[] = {currY + 50, currY - 50, currY - 25, currY + 25};
        
-        Polygon baseUp = new Polygon(xUp, yUp, 4);
+        PolygonClass baseUp = new PolygonClass(xUp, yUp, 4);
         components.add(baseUp);
         
         int xsailUp[] = {currX - 18, currX + 12 , currX + 12};
         int ysailUp[] = {currY, currY, currY - 20,}; 
 
-        Polygon sailUp = new Polygon(xsailUp, ysailUp, 3);
+        PolygonClass sailUp = new PolygonClass(xsailUp, ysailUp, 3);
         components.add(sailUp);
 
         Rect mastUp = new Rect(currX - 18, currY , 45, 5);
@@ -78,13 +78,13 @@ public class SpeedBoat extends Vehicle {
         int xDown[] = {currX + 25, currX + 25, currX , currX };
         int yDown[] = {currY + 50, currY - 50, currY - 25, currY + 25};
        
-        Polygon baseDown = new Polygon(xDown, yDown, 4);
+        PolygonClass baseDown = new PolygonClass(xDown, yDown, 4);
         components.add(baseDown);
         
         int xsailDown[] = {currX + 65, currX + 35 , currX + 35};
         int ysailDown[] = {currY + 5, currY + 5, currY + 25,}; 
 
-        Polygon sailDown = new Polygon(xsailDown, ysailDown, 3);
+        PolygonClass sailDown = new PolygonClass(xsailDown, ysailDown, 3);
         components.add(sailDown);
 
         Rect mastDown = new Rect(currX + 24, currY , 40, 5);
@@ -98,7 +98,7 @@ public class SpeedBoat extends Vehicle {
         int xLeft[] = {currX, currX + 25, currX + 75, currX + 100};
         int yLeft[] = {currY, currY + 25, currY + 25, currY};
 
-        Polygon baseLeft = new Polygon(xLeft, yLeft, 4);
+        PolygonClass baseLeft = new PolygonClass(xLeft, yLeft, 4);
         components.add(baseLeft);
 
         Rect engineLeft = new Rect(currX + 80, currY - 10, 10, 10);
@@ -109,7 +109,7 @@ public class SpeedBoat extends Vehicle {
         int xBase[] = {currX, currX + 25, currX + 75, currX + 100};
         int yBase[] = {currY, currY + 25, currY + 25, currY};
 
-        Polygon base = new Polygon(xBase, yBase, 4);
+        PolygonClass base = new PolygonClass(xBase, yBase, 4);
         components.add(base);
 
         Rect engine = new Rect(currX + 10, currY - 10, 10, 10);

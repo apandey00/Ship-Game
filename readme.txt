@@ -8,8 +8,6 @@ Notes:
 - Rethink better way to handle speed functionality 
 - Change start and stop buttons to toggle buttons as well
 
-
-
 Main Changes from Assignment 4:
 - Implemented a Speedboat subclass of Vehicle
 - Disabled UP and DOWN states for vehicles: looked clunky 
@@ -20,7 +18,7 @@ Main Changes from Assignment 4:
 - Add ship button now can post ships of specified types at specified location
 - Added a Start all and Stop all button that starts and halts animation
   of the entire simulation at once 
-- Added speed control through Scrollbar
+- Added speed control through Scrollbar (Disabled when animation halted)
 
 
 Application design description:

@@ -6,6 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
 import java.util.Vector;
+import java.awt.event.*;
 
 abstract public class Vehicle {
     /* UP and DOWN states currently disabled */
@@ -22,7 +23,7 @@ abstract public class Vehicle {
 
     protected int orientation;
 
-    protected Vector<Shape> components;
+    protected Vector<ShapeClass> components;
     protected Color c;
 
     protected boolean inMotion;
@@ -42,6 +43,14 @@ abstract public class Vehicle {
         speed = s / 2;
     }
     
+    public Boolean isInside(Point p) {
+        for (int i = 0; i < components.size(); i++) {
+            if (components.get(i).checks(p)) {
+                return true;
+            }
+        }
+            return false;
+    }
     /* Updates current locations every tick according to speed */
     public void tick() {
         if (inMotion && orientation == RIGHT) {
