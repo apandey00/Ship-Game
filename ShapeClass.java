@@ -8,6 +8,7 @@ import java.awt.geom.*;
 
 abstract public class ShapeClass {
     protected int x, y;
+    Shape shape;
 
     public void setPos (int xin, int yin) {
         x = xin; y = yin;
@@ -21,6 +22,12 @@ abstract public class ShapeClass {
             if (y < this.y + 25 && y > this.y - 25)
                 return true;
         return false;
+    }
+    public Shape getShape() {
+        return shape;
+    }
+    protected boolean collides(ShapeClass other) {
+        return shape.getBounds2D().intersects(other.getShape().getBounds2D());
     }
 
     /* abstract function */

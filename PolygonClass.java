@@ -16,6 +16,9 @@ class PolygonClass extends ShapeClass {
         yArray = yin.clone();
         num = n;
         setPos(xin[0], yin[0]);
+
+        Polygon pol = new Polygon(xArray, yArray, num);
+        shape = pol;
     }
 
     public boolean checks(Point p) {

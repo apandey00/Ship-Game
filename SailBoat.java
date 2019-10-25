@@ -130,6 +130,9 @@ public class SailBoat extends Vehicle {
         break;
         }
     }
+    protected int getType() {
+        return 0;
+    }
     
     /* No need to override since we are only using two states for now */
 

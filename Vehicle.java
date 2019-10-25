@@ -36,6 +36,15 @@ abstract public class Vehicle {
             (components.elementAt(i)).draw(g);
         }
     }
+    protected boolean collides(ShapeClass base) {
+        if (this.components.get(0).collides(base)) {
+            return true;
+        }
+        return false;
+    }
+    protected ShapeClass getVehicleBase() {
+        return components.get(0);
+    }
 
     /* sets speed */
     // rethink better way to handle speed ratios
@@ -82,6 +91,24 @@ abstract public class Vehicle {
         changeDisplay();
     }
 
+    protected Point getLocation() {
+        Point p = new Point(currX, currY);
+        return p;
+    }
+
+    protected void setPos(int x, int y) {
+        currX = x;
+        currY = y;
+    }
+
+    protected int getOrientation() {
+        return orientation;
+    }
+    // protected void setOrientation(int i) {
+    //     orientation = i;
+    // }
+
     /* abstract function overridden by subclasses */
     protected void changeDisplay() {}
+    protected int getType() {return -1;}
 }

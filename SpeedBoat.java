@@ -118,6 +118,9 @@ public class SpeedBoat extends Vehicle {
 
         }
     }
+    protected int getType() {
+        return 1;
+    }
 
     /* No need to override since we are only using two states for now */
 

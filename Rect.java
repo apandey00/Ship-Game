@@ -14,6 +14,8 @@ class Rect extends ShapeClass {
         x = xin; y = yin; 
         wid = widin; ht = htin; 
         setPos(xin, yin);
+        Rectangle rect = new Rectangle(x, y, wid, ht);
+        shape = rect;
     }
 
     public void setSize (int widin, int htin) {

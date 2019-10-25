@@ -37,11 +37,10 @@ public class Main extends JFrame {
         Ships.setLayout (new GridLayout (5, 1));
 
         // Put these inside the Ships panel
-        JLabel label = new JLabel ("Ships:");
+        JLabel label = new JLabel ("Score: 0");
+        dataModel.addLabel(label);
         Ships.add (label);
-        String[] comboStrings = { "Ship 1"};
-        ComboBox combo = new ComboBox(comboStrings, dataModel, sBar);
-        Ships.add (combo);
+
 
         // Background color button
         ColorButton colorB = new ColorButton("Change Color", "color changed", canvas);
@@ -93,7 +92,7 @@ public class Main extends JFrame {
 
         // Add button
         addButton addB = new addButton ("Add Ship", "New Ship Added", dataModel, 
-                                        combo, tfCol, tfRow, tb1, tb2);
+                                         tfCol, tfRow, tb1, tb2);
         controls.add (addB);
 
         // Speed control

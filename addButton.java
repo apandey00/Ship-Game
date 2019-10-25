@@ -9,14 +9,13 @@ import java.awt.event.ActionEvent;
 public class addButton extends JButton implements ActionListener{
     private String actionMessage;
     private Model model;
-    private ComboBox combo;
     private TextField tfCol;
     private TextField tfRow;
     private ToggleButton sail;
     private ToggleButton speed;
 
     // Need to restructure
-    public addButton (String label, String msg, Model m, ComboBox Combo,
+    public addButton (String label, String msg, Model m,
                       TextField tf1, TextField tf2, ToggleButton sail,
                       ToggleButton speed){
         
@@ -25,7 +24,6 @@ public class addButton extends JButton implements ActionListener{
 
         actionMessage = msg;
         model = m;
-        combo = Combo;
         tfCol = tf1;
         tfRow = tf2;
         this.sail = sail;
@@ -33,7 +31,6 @@ public class addButton extends JButton implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println(actionMessage);
         String colS = tfCol.getText();
         String rowS = tfRow.getText();
         
@@ -59,8 +56,14 @@ public class addButton extends JButton implements ActionListener{
             v = new SpeedBoat(col, row);
         }
         model.addVehicle(v);
-        combo.addShip();
-        model.redraw();
+        if (!model.checkCollision()) {
+            model.redraw();
+            System.out.println(actionMessage);
+        }
+        else {
+            System.out.println("Collision detected: cannot add");
+            model.removeVehicle(model.numVehicles() - 1);
+        }
     }
 
     /* function to validate input */
